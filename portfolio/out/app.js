@@ -2,7 +2,7 @@
 let header = document.querySelector("header");
 function createHeader(pageI, type) {
     header.innerHTML = `
-    <div class="title nav-item" onclick="location.pathname='index.html'">
+    <div class="title nav-item" onclick="location.pathname='portfolio/index.html'">
         <div>Caleb Early :: Portfolio</div>
     </div>
     <nav>
