@@ -1,0 +1,240 @@
+section{
+    height:unset;
+    padding:0px 2rem;
+    padding-top:50px;
+    padding-bottom:100px;
+    margin:0px;
+    margin-bottom:50px;
+    border-bottom:solid 1px lightgray;
+}
+section:not(.first-section){
+    border-top:solid 1px lightgray;
+}
+
+.larger-right > :first-child{
+    width:35% !important;
+}
+.larger-right > :last-child{
+    width:65% !important;
+}
+.full-img{
+    box-sizing:border-box;
+    /* width:100%; */
+    
+}
+section img{
+    width:auto;
+}
+.std{
+    image-rendering:unset;
+}
+
+.two-cont{
+    display:flex;
+    justify-content:center;
+    --width:50%;
+}
+.two-cont > *{
+    width:var(--width);
+}
+.small-cont{
+    /* width:60%; */
+}
+
+.first-section ul > li{
+    max-width:80%;
+}
+ul > li{
+    margin:2rem 0px;
+    font-size:20px;
+}
+.img-cont2{
+    padding-left:5rem;
+}
+section.dark .img-cont img{
+    outline:solid 1px rgba(255,255,255,0.4);
+}
+
+.s-sub{
+    margin-left:50vw;
+    transform:translateX(-50%);
+    width:800px;
+    border:solid 1px lightgray;
+    border-radius:1rem;
+    padding-top:0px;
+    padding-bottom:0px;
+    margin-top:100px;
+    margin-bottom:100px;
+}
+
+/* .flx-v{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+} */
+
+.two-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2rem;
+}
+
+section ul > ul{
+    margin-top:-4px;
+}
+
+.flx-sb{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.flx-sb > *{
+    width:100%;
+    height:100%;
+}
+.flx-col{
+    display:flex;
+    flex-direction:column;
+    /* width:100%; */
+    align-items:center;
+}
+.flx-col:not(.ignore) > *{
+    width:100%;
+}
+
+img.pixelated{
+    image-rendering:crisp-edges !important;
+    image-rendering:pixelated !important;
+}
+.img-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:4rem;
+    width:75%;
+    margin-top:100px;
+}
+.img-grid > div,
+.sub-grid > div{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.img-grid img,
+.sub-grid img{
+    width:100%;
+    /* height:100%; */
+}
+.sub-grid > div{
+    width:100%;
+    height:100%;
+}
+.sub-grid{
+    display:flex;
+    flex-direction:column;
+}
+.s2{
+    grid-column:span 2;
+}
+.s2r{
+    grid-row:span 2;
+}
+
+.extra-list{
+    display:none;
+    margin-left:2rem;
+    align-self:start;
+}
+
+@media (max-width: 1500px){
+    .cont{
+        max-width:1500px;
+        width:100%;
+    }
+    /* .qs-main{
+        width:300px;
+    } */
+}
+@media (max-width: 1200px){
+    .d-color-test{
+        flex-direction:column;
+    }
+    .extra-list{
+        display:block;
+    }
+    .first-list{
+        display:none;
+    }
+    .larger-right{
+        flex-direction:column;
+    }
+    div.larger-right > div:last-child{
+        width:100% !important;
+        box-sizing:border-box;
+    }
+    .mosaic-cont{
+        align-items:start !important;
+    }
+    .larger-right div:first-child{
+        width:calc(100% - 10px) !important;
+    }
+    .qs-main .flx-sb{
+        flex-direction:row !important;
+    }
+}
+@media (max-width: 800px) {
+    .short{
+        width:100%;
+    }
+    .flx-sb{
+        flex-direction:column;
+    }
+    .cont{
+        flex-direction:column;
+    }
+    section .cont > div{
+        width:100% !important;
+        box-sizing:border-box;
+        padding:1rem !important;
+    }
+    .two-grid{
+        grid-template-columns:1fr;
+    }
+    .d-color-test div:last-child{
+        width:unset !important;
+    }
+    section{
+        padding-left:0.5rem !important;
+        padding-right:0.5rem !important;
+    }
+    .s-sub{
+        max-width:800px;
+        width:90% !important;
+    }
+    section.extra-pad{
+        padding-top:2.5rem !important;
+        padding-bottom:6.5rem !important;
+    }
+    .img-grid{
+        gap:5px;
+    }
+    ul{
+        padding-left:10px;
+    }
+    .first-section ul > li{
+        max-width:100% !important;
+    }
+}
+@media (max-width: 400px){
+    .larger-right div:first-child{
+        width:100% !important;
+    }
+    p{
+        font-size:14px !important;
+    }
+    h1{
+        font-size:22px !important;
+    }
+    .file-icon{
+        width:50% !important;
+    }
+}

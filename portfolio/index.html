@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Site</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header></header>
+    <script src="out/app.js"></script>
+    <script>
+        createHeader(0);
+    </script>
+    <div class="overlay"></div>
+    
+    <div class="hero">
+        <div class="hero-left">
+            <div>
+                <h5 class="l-intro">Hi, I'm</h5>
+                <div class="d-name">
+                    <h1 class="l-name">Caleb</h1>
+                    <h1 class="l-name" style="margin-top:-70px;margin-left:100px">Early</h1>
+                </div>
+                <h5 class="l-title" style="text-align:right;margin-top:100px">Full Stack <br> Web Developer</h5>
+            </div>
+        </div>
+        <div class="hero-right">
+            <canvas class="hc3"></canvas>
+        </div>
+    </div>
+    
+    <canvas class="hero-canvas none"></canvas>
+    
+    <section class="dark-section s-skills none">
+        <div class="cont">
+            <h1>Skills</h1>
+            <div class="d-skills">
+                <div>
+                    <img src="assets/typescript_logo.png" alt="">
+                    <div>JavaScript</div>
+                </div>
+                <div>
+                    <img src="assets/javascript_logo.png" alt="">
+                    <div>JavaScript</div>
+                </div>
+                <div>
+                    <img class="gray" src="assets/html_logo.png" alt="">
+                    <div>JavaScript</div>
+                </div>
+                <div>
+                    <img src="assets/css_logo.png" alt="">
+                    <div>JavaScript</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="s-main-projects">
+        <canvas class="hero-canvas-2 none"></canvas>
+        <div class="cont">
+            <h1 class="pixel" style="text-align:center;">Main Projects</h1>
+            <div class="sections">
+                <div class="section-card">
+                    <video src="assets/large_projects.mp4" autoplay loop muted></video>
+                    <div class="card-text">
+                        <h2>Large Projects</h2>
+                        <p>This is a small collection of some large projects of mine that I've spent many months working on.</p>
+                        <a href="large_projects.html">Check it out</a>
+                    </div>
+                </div>
+                <div class="section-card">
+                    <video src="assets/experiments.mp4" autoplay loop muted></video>
+                    <div class="card-text">
+                        <h2>Experiments</h2>
+                        <p>Ideas that came to me while working on other projects.</p>
+                        <a href="experiments.html">Check it out</a>
+                    </div>
+                </div>
+                <div class="section-card">
+                    <video src="assets/libraries.mp4" autoplay loop muted></video>
+                    <div class="card-text">
+                        <h2>Libraries</h2>
+                        <p>These are projects that other developers can use!</p>
+                        <a href="libraries.html">Check it out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="s-contact">
+        <div class="cont contact-cont">
+            <div class="left">
+                <h1 class="pixel">Contact Me</h1>
+                <br>
+                <p>Have a question or want to work with me?</p>
+                <p>Contact me at claebhero@gmail.com.</p>
+            </div>
+            <div class="right">
+                <div class="form">
+                    <div class="inp-cont">
+                        <div>Your Email</div>
+                        <input type="text" class="i-email">
+                    </div>
+                    <div class="inp-cont">
+                        <div>Your Name</div>
+                        <input type="text" class="i-name">
+                    </div>
+                    <div class="inp-cont">
+                        <div>Message</div>
+                        <textarea class="i-message" name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <button class="submit" onclick="mail()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <button class="invert" onclick="window.scrollTo({top:0,left:0,behavior:'smooth'})">Back to Top</button>
+    </footer>
+    <script src="out/NE_1.3.2.js"></script>
+    <script src="out/main.js"></script>
+</body>
+</html>
