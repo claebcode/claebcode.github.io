@@ -45,7 +45,7 @@ b_reset.addEventListener("click",e=>{
 });
 
 function setPlayI(i:number){
-    let str = localStorage.getItem("__SE-PD") || "{locId:0}";
+    let str = localStorage.getItem("__SE-PD") || '{"locId":0}';
     let o = JSON.parse(str);
     o.locId = i;
     localStorage.setItem("__SE-PD",JSON.stringify(o));
@@ -67,11 +67,11 @@ b_addChoice.addEventListener("click",e=>{
 b_play.addEventListener("click",e=>{
     story._save();
     setPlayI(0);
-    location.pathname = "/play";
+    location.pathname = "play";
 });
 b_resumePlay.addEventListener("click",e=>{
     story._save();
-    location.pathname = "/play";
+    location.pathname = "play";
 });
 b_save.addEventListener("click",e=>{
     story._save();
