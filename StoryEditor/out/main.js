@@ -70,11 +70,11 @@ b_addChoice.addEventListener("click", e => {
 b_play.addEventListener("click", e => {
     story._save();
     setPlayI(0);
-    location.pathname = "play";
+    location.pathname += "play";
 });
 b_resumePlay.addEventListener("click", e => {
     story._save();
-    location.pathname = "play";
+    location.pathname += "play";
 });
 b_save.addEventListener("click", e => {
     story._save();
