@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <div class="back hide"></div>
     <div class="menus"></div>
     <header>
         <div class="h-settings">
@@ -15,9 +14,6 @@
             <button class="b-export">Export</button>
             <button class="b-import">Import</button>
             <button class="b-reset">Reset File</button>
-            <button class="b-create">Create Story</button>
-            <button class="b-open">Open Story</button>
-            <span class="b-theme"><img src="assets/light_mode.svg" alt=""></span>
         </div>
         <div class="h-play">
             <button class="b-resume-play">Resume Play</button>
@@ -53,15 +49,7 @@
                     <p>You can add multiple choices at one time by separating them by commas:<br>Choice 1, Choice 2</p>
                 </div>
                 <!-- <textarea class="ta-choices" name="" id="" cols="30" rows="10"></textarea> -->
-            </div><br>
-            <hr>
-            <div class="block">
-                <p>Background Image</p>
-                <button class="b-choose-bg-img">Choose Image</button>
-                <button class="b-remove-bg-img">Remove Image</button>
-                <div class="l-bg-preview">No file.</div>
-                <img class="img-bg-preview inv-img">
-            </div><br>
+            </div>
             <hr>
             <div class="block">
                 <p>Play</p>
@@ -75,18 +63,13 @@
             <div></div>
             <div class="d-search">
                 <input class="i-search-all" type="text" placeholder="Search...">
-                <!-- <button>Search</button> -->
+                <button>Search</button>
             </div>
-            <div class="global-visitors"></div>
+            <div></div>
         </div>
         <div class="grid2"></div>
-        <div class="grid">
-            <div class="cursors"></div>
-        </div>
+        <div class="grid"></div>
     </div>
-    <script src="out/pre.js"></script>
-    <script src="out/socket.io.min.js"></script>
-    <script src="out/network.js"></script>
     <script src="out/core.js"></script>
     <script src="out/main.js"></script>
 </body>

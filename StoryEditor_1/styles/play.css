@@ -108,13 +108,6 @@ body{
     animation:FadeInPItem forwards 4s ease-out;
 }
 
-img{
-    margin-left:50%;
-    transform:translate(-50%);
-    animation:FadeInImg forwards 4s ease-out;
-    margin-bottom:5rem;
-}
-
 @keyframes FadeInPItem {
     0%{
         opacity:0;
@@ -130,26 +123,5 @@ img{
     100%{
         opacity:1;
         filter:blur(0px);
-    }
-}
-@keyframes FadeInImg {
-    0%{
-        opacity:0;
-        filter:blur(10px) brightness(0.75);
-    }
-    25%{
-        opacity:0;
-        filter:blur(10px) brightness(0.75);
-    }
-    /* 50%{
-        opacity:0;
-        filter:blur(10px) brightness(0.75);
-    } */
-    75%{
-        opacity:1;
-    }
-    100%{
-        opacity:1;
-        filter:blur(0px) brightness(0.75);
     }
 }

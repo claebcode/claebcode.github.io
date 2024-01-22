@@ -1,35 +1,9 @@
-function LSGet(id) {
-    return localStorage.getItem(AID + id);
-}
-function LSGetSet(id, req) {
-    let v = localStorage.getItem(AID + id);
-    if (v == "null")
-        v = null;
-    if (v)
-        return v;
-    v = req();
-    localStorage.setItem(AID + id, v);
-    return v;
-}
-function getUsername() {
-    return LSGetSet("name", () => prompt("Enter your username"));
-}
-function wait(delay) {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            resolve();
-        }, delay);
-    });
-}
 let panes = document.querySelectorAll(".pane");
 let pane_editBoard = document.querySelector(".edit-board");
 let pane_editChoice = document.querySelector(".edit-choice");
 let grid = document.querySelector(".grid");
 let grid2 = document.querySelector(".grid2");
 let keys = {};
-function santitizeEmail(email) {
-    return email.replaceAll("@", "").replaceAll(".", "");
-}
 var ConnectionType;
 (function (ConnectionType) {
     ConnectionType[ConnectionType["start"] = 0] = "start";
@@ -46,21 +20,18 @@ let connectionData = [
     }
 ];
 class Story {
-    constructor(filename, owner) {
+    constructor(filename) {
         this.filename = filename;
         this._i = 0;
         this.start = new Board(this, 0, g_gap);
         this.origin = new OriginPoint(this, 0, 0);
-        this.owner = owner;
     }
     filename;
-    owner;
     _i;
     start;
     origin;
     panX = 0;
     panY = 0;
-    allBoards = [];
     loadedObjs = [];
     // 
     isPanning = false;
@@ -73,7 +44,6 @@ class Story {
     selBoards = [];
     dragBoards = [];
     needsSave = false;
-    userData;
     // 
     init() {
         this.start.load();
@@ -120,30 +90,21 @@ class Story {
     addObj(o) {
         if (!this.loadedObjs.includes(o)) {
             this.loadedObjs.push(o);
-            if (o instanceof Board)
-                this.allBoards.push(o);
             if (grid)
                 grid.appendChild(o.div);
         }
     }
-    deleteBoard(b, isOther = false) {
+    deleteBoard(b) {
         let list = [...b.connections];
         for (const c of list) {
             c.remove();
         }
         b.div.parentElement.removeChild(b.div);
         this.loadedObjs.splice(this.loadedObjs.indexOf(b), 1);
-        if (!isOther) {
-            if (this.selBoards.includes(b))
-                this.deselectBoards();
-            this.hoverBoard = null;
-            closePane(pane_editBoard);
-            socket.emit("s_deleteBoard", b._id);
-        }
-        else {
-            this.selectRemoveBoard(b);
-        }
-        this.allBoards.splice(this.allBoards.indexOf(b), 1);
+        if (this.selBoards.includes(b))
+            this.deselectBoards();
+        this.hoverBoard = null;
+        closePane(pane_editBoard);
     }
     getRootPos() {
         // let x = innerWidth/2 - this.panX;
@@ -199,74 +160,6 @@ class Story {
         }
         this.selBoards = [];
     }
-    getBoard(id) {
-        return this.allBoards.find(v => v._id == id);
-    }
-    otherSelectBoard(email, id) {
-        let b = this.getBoard(id);
-        if (!b)
-            return;
-        let u = cursorList.find((v) => v.email == email);
-        if (!b.visitors.some(v => v.email == email)) {
-            b.visitors.push(u);
-            b.updateVisitors();
-        }
-        // b.div.style.border = "solid 3px "+u.col;
-        // let div = document.createElement("div");
-        // div.innerHTML = `
-        //     <div class="vl-name></div>
-        // `;
-        // div.style.setProperty("--col",u.col);
-        // div.className = "vld-"+santitizeEmail(email); // visitor list div
-        // b.visitorList.appendChild(div);
-    }
-    otherDeselectBoard(email, id) {
-        let b = this.getBoard(id);
-        if (!b)
-            return;
-        if (b.visitors.some(v => v.email == email)) {
-            b.visitors.splice(b.visitors.findIndex(v => v.email == email), 1);
-            b.updateVisitors();
-        }
-        // b.div.style.border = null;
-        // let div = b.visitorList.querySelector(".vld-"+santitizeEmail(email));
-        // if(div) b.visitorList.removeChild(div);
-    }
-    moveBoardTo(email, id, x, y) {
-        let b = this.getBoard(id);
-        if (!b)
-            return;
-        b.x = x;
-        b.y = y;
-        b.update();
-    }
-    moveBoards(list, dx, dy) {
-        let done = [];
-        for (const b of list) {
-            function loop(board, once = false) {
-                if (done.includes(board))
-                    return;
-                board.x += dx;
-                board.y += dy;
-                board.update();
-                socket.emit("s_moveBoardTo", board._id, board.x, board.y);
-                done.push(board);
-                if (once)
-                    return;
-                for (const c of board.buttons) {
-                    loop(c.board);
-                }
-            }
-            loop(b, keys.alt);
-        }
-        // socket.emit("s_moveBoardsTo",list.map(v=>{
-        //     return {
-        //         id:v._id,
-        //         x:v.x,
-        //         y:v.y
-        //     };
-        // }));
-    }
     // File Management
     getSaveObj() {
         let o = {
@@ -281,38 +174,28 @@ class Story {
     save() {
         this.needsSave = true;
     }
-    handle;
-    async _save() {
-        socket.emit("s_save");
-        return;
+    _save() {
         if (!grid) {
             console.warn("Warn! prevented trying to change story while playing it!");
             return;
         }
-        // if(!story.handle) await openDir();
-        // console.log("saved (new folder system)");
-        // return;
         let o = this.getSaveObj();
         let str = JSON.stringify(o);
         localStorage.setItem("__SELS-tmp", str);
         console.log("...saved");
     }
-    static load(o) {
-        if (!o) {
+    static load() {
+        let str = localStorage.getItem("__SELS-tmp");
+        if (!str)
             return;
-            let str = localStorage.getItem("__SELS-tmp");
-            if (!str)
-                return;
-            o = JSON.parse(str);
-            if (!o)
-                return;
-        }
-        let s = new Story(o.filename, o.owner);
+        let o = JSON.parse(str);
+        if (!o)
+            return;
+        let s = new Story(o.filename);
         s._i = 0;
         s.setPan(o.panX, o.panY);
         let o1 = o.boards[0];
         let root = new Board(s, o1.x, o1.y, o1.title, o1.text, o1.tags);
-        root.img = o1.img;
         root._id = o1._id;
         s.start = root;
         root.load();
@@ -320,7 +203,6 @@ class Story {
         for (let i = 1; i < o.boards.length; i++) {
             let b = o.boards[i];
             let b1 = new Board(s, b.x, b.y, b.title, b.text, b.tags);
-            b1.img = b.img;
             b1._id = b._id;
             list.push(b1);
         }
@@ -530,9 +412,6 @@ class Board extends StoryObj {
     _id;
     l_title;
     l_tag;
-    visitorList;
-    visitors = [];
-    img;
     load() {
         super.load();
         if (this.div)
@@ -542,7 +421,6 @@ class Board extends StoryObj {
         div.className = "board";
         let max = 40;
         div.innerHTML = `
-            <div class="visitor-list"></div>
             <div class="title">${this.title}</div>
             <div class="tag">${this.text.substring(0, max) + (this.text.length > max ? "..." : "")}</div>
             <!--<div class="tag">${this.tags.join(", ")}</div>-->
@@ -555,8 +433,6 @@ class Board extends StoryObj {
             this.story.hoverBoard = null;
         });
         div.addEventListener("mousedown", e => {
-            if (menus.children.length)
-                return;
             if (e.ctrlKey)
                 return;
             this.story.selectBoard(this);
@@ -564,7 +440,6 @@ class Board extends StoryObj {
         this.story.addObj(this);
         this.l_title = div.querySelector(".title");
         this.l_tag = div.querySelector(".tag");
-        this.visitorList = div.querySelector(".visitor-list");
         if (false) { // collision
             let t = this;
             function test() {
@@ -642,15 +517,7 @@ class Board extends StoryObj {
             c.update();
         }
     }
-    updateVisitors() {
-        this.div.style.border = null;
-        this.visitorList.textContent = "";
-        for (const u of this.visitors) {
-            let div = createVisitorDiv(u, this.div);
-            this.visitorList.appendChild(div);
-        }
-    }
-    addChoice(labels, custom, isOther = false) {
+    addChoice(labels, custom) {
         let i = 0;
         let w = (labels.length - 1) * g_gap;
         let list = [];
@@ -674,15 +541,13 @@ class Board extends StoryObj {
             this.buttons.push(btn);
             b.load();
             btn.path = this.story.makePath(this, b, btn);
-            if (!isOther) {
-                this.story.selectBoard(b);
-                loadEditBoard(b);
-            }
+            this.story.selectBoard(b);
+            loadEditBoard(b);
             i++;
         }
         return list;
     }
-    removeChoice(i, deleteBoard = false, isOther = false) {
+    removeChoice(i, deleteBoard = false) {
         let list = i.map(v => this.buttons[v]);
         for (const b of list) {
             if (!b)
@@ -695,8 +560,7 @@ class Board extends StoryObj {
             if (deleteBoard) {
                 story.deleteBoard(b.board);
             }
-            if (!isOther)
-                loadEditBoard(this);
+            loadEditBoard(this);
         }
     }
     write() {
@@ -706,54 +570,6 @@ class Board extends StoryObj {
     select() {
         super.select();
         loadEditBoard(this);
-        if (myCursor)
-            if (!this.visitors.includes(myCursor)) {
-                this.visitors.push(myCursor);
-                this.updateVisitors();
-            }
-        socket.emit("s_selectBoard", this._id);
-    }
-    deselect() {
-        super.deselect();
-        if (myCursor)
-            if (this.visitors.includes(myCursor)) {
-                this.visitors.splice(this.visitors.findIndex(v => v.email == myCursor.email), 1);
-                this.updateVisitors();
-            }
-        socket.emit("s_deselectBoard", this._id);
-    }
-    setImg(name, noEmit = false) {
-        this.img = name;
-        if (name == null) {
-            if (_editBoard_b == this) {
-                l_bgPreview.textContent = "No file.";
-                img_bgPreview.classList.add("hide");
-                img_bgPreview.src = "#";
-            }
-        }
-        if (name == null && noEmit) {
-            return;
-        }
-        if (name) {
-            if (_editBoard_b == this) {
-                l_bgPreview.textContent = name;
-                img_bgPreview.classList.remove("hide");
-                img_bgPreview.src = `${serverURL}/projects/${this.story.owner}/${this.story.filename}/images/${name}`;
-            }
-        }
-        if (!noEmit)
-            socket.emit("s_setBGImage", this._id, name, (code) => {
-                if (code == 0) {
-                    console.warn("failed to set bg img, it doesn't exist");
-                    this.img = null;
-                    if (_editBoard_b == this) {
-                        l_bgPreview.textContent = "No file.";
-                        img_bgPreview.classList.add("hide");
-                        img_bgPreview.src = "#";
-                    }
-                }
-            });
-        this.story.save();
     }
     save() {
         let o = {
@@ -789,8 +605,9 @@ class StoryButton {
 function loadEditBoard(b) {
     if (!grid)
         return;
-    _editBoard_b = b;
     pane_editBoard.classList.add("open");
+    let i_title = pane_editBoard.querySelector(".i-title");
+    let ta_text = pane_editBoard.querySelector(".ta-text");
     // let ta_choices = pane_editBoard.querySelector(".ta-choices") as HTMLTextAreaElement;
     i_title.value = b.title;
     ta_text.value = b.text;
@@ -813,7 +630,6 @@ function loadEditBoard(b) {
             c.label = inp.value;
             c.board.updateConnections();
             story.save();
-            socket.emit("s_renameChoice", b._id, i, c.label);
         });
         inp.addEventListener("mouseenter", e => {
             c.path.div.classList.add("highlight");
@@ -824,7 +640,6 @@ function loadEditBoard(b) {
         let b_remove = div.querySelector(".b-remove-choice");
         b_remove.addEventListener("click", function () {
             b.removeChoice([i]);
-            socket.emit("s_removeChoice", b._id, [i], false);
             // b.buttons.splice(b.buttons.indexOf(c),1);
             // choiceList.removeChild(div);
             story.save();
@@ -833,14 +648,11 @@ function loadEditBoard(b) {
     i_title.oninput = function () {
         b.title = i_title.value;
         b.write();
-        socket.emit("s_editBoardTitle", b._id, b.title);
     };
     ta_text.oninput = function () {
         b.text = ta_text.value;
         b.write();
-        socket.emit("s_editBoardText", b._id, b.text);
     };
-    b.setImg(b.img, true);
 }
 // function setupInput(inp:HTMLInputElement,f:()=>void){
 //     inp.addEventListener("blur",f);
