@@ -469,6 +469,7 @@ function openProjectMenu() {
     });
     socket.emit("getAllProjects", (list) => {
         // console.warn("All projects",list);
+        list = list.filter(v => v.pid != "images");
         for (const data of list) {
             let d = document.createElement("div");
             d.innerHTML = `
