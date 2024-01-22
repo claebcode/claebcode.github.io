@@ -41,6 +41,11 @@ function addMouseCursor(dat) {
 }
 // @ts-ignore
 let socket = io(serverURL);
+function _changeServerURL(s) {
+    serverURL = s;
+    // @ts-ignore
+    socket = io(s);
+}
 function setConneted() {
     console.log("NEW Connection Status: ", socket.connected);
 }
