@@ -1,3 +1,4 @@
+page = 1; // play page
 class PlayData {
     locId;
     static load() {

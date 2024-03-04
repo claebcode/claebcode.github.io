@@ -455,6 +455,8 @@ class Connection extends StoryObj {
         this.update();
     }
     update() {
+        if (page == 1)
+            return;
         let d = this.div;
         let { x, y } = this.story.getRootPos();
         let dx0 = this.to.x - this.from.x;
