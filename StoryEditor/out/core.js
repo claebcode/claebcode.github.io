@@ -133,8 +133,8 @@ class Story {
         // this.updateAllBoards();
     }
     setZoom(v) {
-        this.zoom = v;
-        grid.style.scale = v.toString();
+        // this.zoom = v;
+        // grid.style.scale = v.toString();
     }
     updateAllBoards() {
         for (const b of this.loadedObjs) {
