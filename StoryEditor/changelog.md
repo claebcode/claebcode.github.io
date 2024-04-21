@@ -61,4 +61,6 @@
 - added change starting board support (some visual bugs still and never tested multiplayer support but should work)
 
 ### 4/21/24
-- adjusted time of images in player to make them longer
+- adjusted time of images in player to make them longer (update 2)
+- adjusted time of text to be a little longer
+- fixed transitioning from boards with no images/audio to ones that do so they still have the fade (update 3)
