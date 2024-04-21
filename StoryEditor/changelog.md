@@ -56,3 +56,9 @@
 - added export play mode
 - fixed not being able to scroll unless over button by blocking pointer events on img-cont
 - added progress restart button to player and offline player
+
+### some day can't remember
+- added change starting board support (some visual bugs still and never tested multiplayer support but should work)
+
+### 4/21/24
+- adjusted time of images in player to make them longer
