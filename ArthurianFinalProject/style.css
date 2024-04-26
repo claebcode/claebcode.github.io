@@ -1,0 +1,126 @@
+@import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0);
+
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+nav > :first-child,
+nav > :last-child{
+    width:70px;
+}
+.nav{
+    display:flex;
+    width:100%;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    font-size:17px;
+}
+.icon-btn > div.icon{
+    font-family:"Material Symbols Outlined";
+}
+.icon-btn{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    /* width:30px; */
+    /* height:30px; */
+    padding:5px 10px;
+    border:none;
+    outline:none;
+    background-color:black;
+    color:whitesmoke;
+    border-radius:3px;
+    font-size:16px;
+}
+.icon-btn:hover{
+    background-color:#555;
+}
+/*  */
+main{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-top:20px;
+    padding-top:10px;
+    border-top:solid 1px gray;
+    width:1100px;
+    margin-left:50vw;
+    transform:translate(-50%,0px);
+}
+.quote{
+    animation:ShowQuote 0.2s ease-out;
+}
+.text > div{
+    padding:3px;
+    margin:3px;
+    animation:ShowText 0.2s ease-out;
+    tab-size:1;
+}
+.quote > div{
+    padding:15px;
+    margin:10px;
+    border-radius:5px;
+    background-color:black;
+    color:whitesmoke;
+    position:relative;
+
+    animation:ShowQuote 0.2s ease-out;
+}
+.quote > div::after{
+    content:"";
+    width:15px;
+    height:15px;
+    background-color:black;
+    transform:rotate(45deg);
+    position:absolute;
+    top:-7px;
+    left:10px;
+}
+
+.quote-hint{
+    color:gray;
+    font-style:italic;
+    margin-bottom:20px !important;
+    margin-top:-5px !important;
+}
+.italic{
+    font-style:italic;
+}
+.cit{
+    margin-top:5px;
+    text-align:right;
+}
+.title{
+    font-weight:bold;
+    font-size:24px;
+    margin-bottom:30px !important;
+    /* text-align:right; */
+    text-decoration:underline;
+}
+
+@keyframes ShowQuote{
+    0%{
+        scale:0.9;
+        opacity:0.5;
+    }
+    70%{
+        scale:1.02;
+    }
+    100%{
+        scale:1;
+        opacity:1;
+    }
+}
+@keyframes ShowText {
+    0%{
+        opacity:0.5;
+    }
+    100%{
+        opacity:1;
+    }
+}
