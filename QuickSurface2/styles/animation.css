@@ -1,0 +1,252 @@
+.t-tl{
+    border-collapse:collapse;
+    user-select:none;
+    -webkit-user-select:none;
+    height:min-content; /* seems to fix problem will max height being used when there's a the preview div in the timeline panel */
+}
+.t-tl td,
+.t-tl th{
+    padding:2px;
+    border:solid 1px var(--border);
+    font-size:14px;
+    background-color:var(--pane-bg);
+    position:relative;
+}
+.t-tl th{
+    background-color:var(--lighten3);
+    font-size:13px;
+    height:24px;
+    color:var(--text-dim);
+}
+.t-tl .cell.hold,
+.t-tl .cell-h.hold{
+    z-index:2;
+}
+.t-tl .cell.hold::after,
+.t-tl .cell-h.hold::after{
+    content:"";
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    outline:solid 2px var(--accent);
+    z-index:1;
+    border-radius:3px;
+    /* background-color:var(--lighten3); */
+    
+    outline-style:dashed;
+}
+.t-tl .cell{
+    min-width:24px;
+    min-height:24px;
+}
+.t-tl .cell > div{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    height:24px;
+}
+.t-tl .cell-h{
+    padding:2px 8px;
+    white-space:nowrap;
+}
+.layer-icon{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:0px !important;
+    border:none !important;
+}
+.layer-icon img{
+    width:16px;
+    height:16px;
+}
+.cell.sel::after{
+    content:"";
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    outline:solid 2px var(--accent);
+    z-index:1;
+    border-radius:3px;
+    /* background-color:var(--lighten3); */
+}
+.cell.non-empty .spot{
+    border-top-style:solid !important;
+    border-top-width:10px !important;
+}
+.cell.span-l.non-empty .spot{
+    border-top-left-radius:50rem;
+    border-bottom-left-radius:50rem;
+}
+.cell.span-r.non-empty .spot{
+    border-top-right-radius:50rem;
+    border-bottom-right-radius:50rem;
+}
+.cell.span-l.non-empty{
+    border-right-color:transparent;
+}
+.cell.span-r.non-empty{
+    border-left-color:transparent;
+}
+.cell.span-c.non-empty{
+    border-right-color:transparent;
+    border-left-color:transparent;
+}
+.cell.span-l .spot{
+    width:calc(75%);
+    border-radius:0px;
+    margin-right:-50%;
+    background:none;
+    border-top:dashed 2px var(--col);
+    height:0px;
+}
+.cell.span-r .spot{
+    width:calc(75%);
+    border-radius:0px;
+    margin-left:-50%;
+    background:none;
+    border-top:dashed 2px var(--col);
+    height:0px;
+}
+.cell.span-c .spot{
+    width:calc(100% + 5px);
+    border-radius:0px;
+    margin-left:-2.5px;
+    margin-right:-2.5px;
+    background:none;
+    border-top:dashed 2px var(--col);
+    height:0px;
+}
+
+.spot{
+    width:calc(100% - 14px);
+    height:calc(100% - 14px);
+    /* width:calc(100% - 12px);
+    height:calc(100% - 12px); */
+    border-radius:50rem;
+    /* border-radius:3px; */
+    --col:var(--text);
+    background-color:var(--col);
+}
+
+/*  */
+
+.tab-col{
+    position:sticky !important;
+    z-index:1;
+    background-color:var(--bg) !important;
+}
+td.tab-col::before,
+th.tab-col::before{
+    content:"";
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    outline:solid 1px var(--border);
+}
+th.tab-col{
+    background-color:var(--header-bg) !important;
+}
+.tab-col-3 > span{
+    --w:130px;
+    width:var(--w) !important;
+    max-width:var(--w);
+    min-width:var(--w) !important;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+}
+.v-tl-overflow > div{
+    height:10px !important;
+    translate:0px -4px;
+}
+
+.header2 .ops{
+    &{
+        .btn-list-cont{
+            margin:0px !important;
+            margin-top:-1px !important;
+        }
+        .btn-list-cont > button{
+            padding:6px 12px;
+            font-size:12px;
+        }
+    }
+}
+
+.cell.tag::after{
+    content:"";
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    /* height:100%; */
+    height:5px;
+    background-color:green;
+    /* opacity:0.3; */
+    /* translate:0px -75%; */
+}
+
+/* .tab-col-0 .cell.layer-icon::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: lightcoral;
+    width: 50%;
+    height: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+} */
+
+/* Layer Colors */
+/* .tab-col-3.cell-h{
+    padding-left:14px;
+}
+.tab-col-3.cell-h::after{
+    content:"";
+    position:absolute;
+    width:5px;
+    height:100%;
+    top:0px;
+    left:1px;
+    background-color:green;
+} */
+
+.panel-timeline{
+    display:flex;
+}
+.tl-preview{
+    border-left:solid 1px var(--border);
+    aspect-ratio:var(--grid-aspect);
+    margin-left:auto;
+    display:flex;
+    /* justify-content:center; */
+    /* align-items:center; */
+    padding:10px;
+    width:max-content;
+}
+.tl-preview > *{
+    /* flex: 1 1 0px; */
+    /* flex: 1; */
+    /* margin:auto; */
+    /* width:100%; */
+    /* border-radius:3px; */
+    border:solid 1px var(--border);
+
+
+    /* TODO - this is disabled for now and will hopefully be a configurable thing later because some may like it and some not */
+    /* max-height:200px; */
+}
+.can-w-bg{
+    background:var(--grid);
+    background-size:var(--grid-size);
+    image-rendering:pixelated;
+}

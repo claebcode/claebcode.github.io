@@ -1,0 +1,36 @@
+{
+    "short_name":"QS2",
+    "name":"Quick Surface 2",
+    "icons":[
+        {
+            "src":"/assets/icon/icon2_256.png",
+            "sizes":"256x256",
+            "type":"image/png"
+        },
+        {
+            "src":"/assets/icon/icon2_128.png",
+            "sizes":"128x128",
+            "type":"image/png"
+        },
+        {
+            "src":"/assets/icon/icon2_64.png",
+            "sizes":"64x64",
+            "type":"image/png"
+        },
+        {
+            "src":"/assets/icon/icon2_32.png",
+            "sizes":"32x32",
+            "type":"image/png"
+        },
+        {
+            "src":"/assets/icon/icon2_16.png",
+            "sizes":"16x16",
+            "type":"image/png"
+        }
+    ],
+    "id":"v24.6.13",
+    "start_url":"/index.html",
+    "background_color":"#f5f5f5",
+    "theme_color":"#008080",
+    "display":"standalone"
+}

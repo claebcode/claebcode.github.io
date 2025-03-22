@@ -1,0 +1,57 @@
+.d-hist{
+    display:flex;
+    flex-direction:column;
+}
+.d-hist .hist-item{
+    padding:5px 10px;
+    /* border-bottom:solid 1px var(--border); */
+    font-size:13px;
+    color:var(--text-dim);
+    background-color:var(--darken);
+    user-select:none;
+    -webkit-user-select:none;
+
+    margin:3px 10px;
+    border-radius:3px;
+
+    /* filter:contrast(0); */
+    background-color:var(--lighten3);
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    text-transform:capitalize;
+}
+.d-hist .hist-item.old{
+    /* background-color:gray; */
+    /* filter:contrast(0); */
+    filter:none;
+    opacity:0.5;
+    background:none;
+}
+.d-hist .hist-item.cur{
+    filter:none;
+    outline:solid 2px var(--accent);
+    /* background:none; */
+    /* border-top-left-radius:0px; */
+    /* border-bottom-left-radius:0px; */
+    /* background-color:var(--accent); */
+    /* color:var(--text-dim); */
+    /* border-radius:5px; */
+    /* padding:5px; */
+}
+.hist-item .h-icon{
+    aspect-ratio:1;
+    width:17px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.h-icon img{
+    width:100%;
+    filter:contrast(0);
+}
+.hist-item:hover{
+    background-color:var(--lighten2);
+}

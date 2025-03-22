@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "rootDir": "src",
+        "outDir": "out",
+        "target": "ES2022",
+        "sourceMap": true,
+        "strict": false,
+        "lib": [
+            "DOM",
+            "ES2022",
+            "DOM.Iterable"
+        ],
+        "types": [
+            "@types/wicg-file-system-access"
+        ]
+    },
+    "exclude": [
+        "node_modules",
+        "ver"
+    ]
+}
