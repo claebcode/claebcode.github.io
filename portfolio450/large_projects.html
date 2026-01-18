@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Large Projects</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="large_projects.css">
+</head>
+<body>
+    <header></header>
+    <script src="out/app.js"></script>
+    <script>
+        createHeader(1,0);
+    </script>
+    <section class="s-treegen light first-section flx-col ignore">
+        <div class="cont flx-v larger-right qs-main">
+            <div style="margin-left:0rem;box-sizing:border-box;">
+                <div class="flx-col" style="align-items:start;">
+                    <div class="flx-sb">
+                        <h1>Quick Surface</h1>
+                        <a class="button" style="width:75px;text-align:center;padding:0.75rem 1rem" href="https://turbonobsin.github.io/QuickSurface" target="_blank">Try It</a>
+                    </div>
+                    <p>Designed for making pixel art animations.</p>
+                </div>
+                <br><br>
+                <ul class="first-list">
+                    <li>Save, open, and open recent files directly to and from the file system</li>
+                    <li>Familiar tools such as Fill, Selection, Move & Rotate, Flip layers</li>
+                    <li>Custom layer types (BETA)</li>
+                    <li>Run scripts to automate tasks</li>
+                    <li>Convert your image into a brick mosaic</li>
+                    <li>Edit Resource Packs (BETA)</li>
+                </ul>
+            </div>
+            <div class="img-cont">
+                <img class="std" src="assets/quick_surface_ss.png" alt="">
+            </div>
+        </div>
+        <ul class="extra-list">
+            <li>Save, open, and open recent files directly to and from the file system</li>
+            <li>Familiar tools such as Fill, Selection, Move & Rotate, Flip layers</li>
+            <li>Custom layer types (BETA)</li>
+            <li>Run scripts to automate tasks</li>
+            <li>Convert your image into a brick mosaic</li>
+            <li>Edit Resource Packs (BETA)</li>
+        </ul>
+    </section>
+    <section class="light s-sub">
+        <div class="cont two-cont small-cont">
+            <div>
+                <h2>Custom file format</h2>
+                <p>This is so all your layers, frames, and objects will be there when you come back.</p>
+                <br>
+                <p class="note">An animation with 90 frames with a canvas size of 64 by 64 pixels can save in 0.15 seconds, open in 0.8 seconds, and take up only 79 KB of storage.</p>
+            </div>
+            <div class="center-wrapper">
+                <img src="assets/file.PNG" alt="" class="std file-icon">
+                <img src="assets/DeusLansenneden_stance_x4.gif" style="height:100%;image-rendering:pixelated;" alt="" class="std">
+            </div>
+        </div>
+    </section>
+    <section class="dark extra-pad">
+        <div class="cont two-grid">
+            <div>
+                <h4 class="note">It's a Webapp, but you can...</h4>
+                <h1>Save, Open, Open Recent</h1>
+                <h3 class="note accent" style="text-align:right;margin-right:3rem;">Directly to and from the file system</h3>
+            </div>
+            <div class="img-cont"><img class="std" src="assets/saveAs.png" alt=""></div>
+            <div class="img-cont"><img class="std" src="assets/openRecent.png" alt=""></div>
+            <div class="img-cont"><img class="std" src="assets/fileOpen.png" alt=""></div>
+        </div>
+    </section>
+    <section class="light">
+        <div class="cont flx-sb">
+            <div style="margin-left:0rem">
+                <h1>Layer Types (BETA)</h1>
+                <p class="note">*This feature is not finished but is a work in progress</p>
+                <br>
+                <ul>
+                    <li>
+                        Local Layers (BLUE)
+                        <ul>
+                            <li>These are your standard layers that you can draw onto.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Global Layers (GREEN)
+                        <ul>
+                            <li>A Global Layer will exist on all frames but can have different image data on it.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Static Layers (RED)
+                        <ul>
+                            <li>This type of layer can be used as a template. For example, you can create a Static Layer called house, draw the house once, then every time you change the house it will be updated wherever else you use it in your project.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Background Layers (YELLOW)
+                        <ul>
+                            <li>These layers will exist on all frames automatically (reduces copy and pasting) and will have the same image data across the project. For example, if you added a line on this layer on the first frame, it would automatically affect all other frames with this layer.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="img-cont" style="width:300px;">
+                <img class="std" src="assets/layerTypes.png" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="light">
+        <div class="cont flx-sb larger-right mosaic-cont">
+            <div style="margin-left:0rem;flex-direction:column;align-items:start;" class="center-wrapper">
+                <h1>Brick Mosaic</h1>
+                <p>Turn your image into a mosaic with colors from a palette.</p>
+            </div>
+            <div class="img-cont">
+                <img class="std" src="assets/mosaic2.png" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="dark" style="background-color:#333;padding-bottom:250px">
+        <div class="cont flx-col">
+            <div style="margin-left:0rem;text-align:center;">
+                <h1>Work by Eston J. Puffenbarger</h1>
+                <p>Made in Quick Surface</p>
+            </div>
+            <div class="img-grid">
+                <div><img class="pixelated" src="assets/EstonsArt/Samus.gif" alt=""></div>
+                <div><img class="pixelated" src="assets/EstonsArt/bender.gif" alt=""></div>
+                <div><img class="pixelated" src="assets/EstonsArt/BoxTransformer.gif" alt=""></div>
+                <div><img class="pixelated" src="assets/EstonsArt/IronMan2.gif" alt=""></div>
+                <div><img class="pixelated" src="assets/EstonsArt/G.L.A.D.O.S..png" alt=""></div>
+                <div><img class="pixelated" src="assets/EstonsArt/lightsaber.gif" alt="" style="width:63%"></div>
+                <div class="sub-grid">
+                    <div><img class="pixelated" src="assets/EstonsArt/EstonLogoShine.png" alt=""></div>
+                    <div><img class="pixelated" src="assets/EstonsArt/DecepticonLogo.gif" alt=""></div>
+                </div>
+                <div><img class="pixelated" src="assets/EstonsArt/IronManMk2.gif" alt=""></div>
+                <div class="sub-grid">
+                    <div><img class="pixelated" src="assets/EstonsArt/ghostbusters_charecters.gif" alt=""></div>
+                    <div><img class="pixelated" src="assets/EstonsArt/MeJedi.png" alt=""></div>
+                </div>
+                <div><img class="pixelated" src="assets/EstonsArt/IronManHope.png" alt=""></div>
+                <div><img class="pixelated" src="assets/EstonsArt/JackSkellington.png" alt=""></div>
+                <div><img class="pixelated" src="assets/EstonsArt/mandohelmet.png" alt=""></div>
+                <div><img class="pixelated" src="assets/EstonsArt/Mothman.gif" alt=""></div>
+                <div><img class="pixelated" src="assets/EstonsArt/Portal.png" alt=""></div>
+                <div><img class="pixelated" src="assets/EstonsArt/BatmanRooftop.gif" alt=""></div>
+                <div><img class="pixelated" src="assets/EstonsArt/tron.gif" alt=""></div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <button class="invert" onclick="window.scrollTo({top:0,left:0,behavior:'smooth'})">Back to Top</button>
+    </footer>
+    <section class="dark" style="margin:0px;margin-top:-50px;border:none">
+        <div class="cont center-wrapper" style="flex-direction:column;">
+            <h2>Want to try it out?</h2>
+            <a class="button invert" href="https://turbonobsin.github.io/QuickSurface" target="_blank">Try It</a>
+        </div>
+    </section>
+    <script src="out/experiments.js" class="std"></script>
+</body>
+</html>

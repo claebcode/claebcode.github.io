@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiments</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="experiments.css">
+</head>
+<body>
+    <header></header>
+    <script src="out/app.js"></script>
+    <script>
+        createHeader(1,1);
+    </script>
+    <section class="s-treegen light">
+        <div class="cont flx-v">
+            <div>
+                <h1>Procedural Tree Generator</h1>
+                <p>Randomly generate a tree based on a set of rules.</p>
+                <p>The idea for this project came from looking up at some trees in my backyard and thinking, could I simulate the structure of trees?</p>
+                <p>After the COVID-19 Pandemic hit we had a lot of time at home, and I would often go outside to admire nature and think.</p>
+            </div>
+            <div class="grid">
+                <iframe src="https://claeb-treegen.glitch.me/" frameborder="0"></iframe>
+            </div>
+        </div>
+    </section>
+    <section class="s-psims light">
+        <div class="cont flx-v">
+            <div class="right">
+                <h1>Particle Simulators</h1>
+                <p>Random ideas I've had about how to move lots of small objects around a scene.</p>
+            </div>
+            <div class="d-psims">
+                <div class="grid">
+                    <img class="pSim-ss" src="assets/pSim1-13_2_ss.png">
+                    <div class="foot">
+                        <h2>PSim1-13</h2>
+                        <a class="button" target="_blank" href="https://turbonobsin.github.io/particlesims/wave1/13">Try It</a>
+                    </div>
+                </div>
+                <div class="grid">
+                    <img class="pSim-ss" src="assets/pSim2-31_ss.png">
+                    <div class="foot">
+                        <h2>PSim2-31</h2>
+                        <a class="button" target="_blank" href="https://turbonobsin.github.io/particlesims/wave2/31">Try It</a>
+                    </div>
+                </div>
+                <div class="grid">
+                    <img class="pSim-ss" src="assets/pSim2-9_ss.png">
+                    <div class="foot">
+                        <h2>PSim2-9</h2>
+                        <a class="button" target="_blank" href="https://turbonobsin.github.io/particlesims/wave2/9">Try It</a>
+                    </div>
+                </div>
+                <div class="grid">
+                    <img class="pSim-ss" src="assets/pSim2-26_ss.png">
+                    <div class="foot">
+                        <h2>PSim2-26</h2>
+                        <a class="button" target="_blank" href="https://turbonobsin.github.io/particlesims/wave2/26">Try It</a>
+                    </div>
+                </div>
+                <div class="grid">
+                    <img class="pSim-ss" src="assets/pSim2-18_ss.png">
+                    <div class="foot">
+                        <h2>PSim2-18</h2>
+                        <a class="button" target="_blank" href="https://turbonobsin.github.io/particlesims/wave2/18">Try It</a>
+                    </div>
+                </div>
+                <div class="grid">
+                    <img class="pSim-ss" src="assets/pixelManip1-1_ss.png">
+                    <div class="foot">
+                        <h2>Deposition Sim 1</h2>
+                        <a class="button" target="_blank" href="https://turbonobsin.github.io/particlesims/wave1/DepositionSim1">Try It</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="s-psims light">
+        <div class="cont flx-v">
+            <div>
+                <h1>A 3D Renderer Built from Scratch</h1>
+                <p>This program lets you open .obj files and draws them in 3D purely on the CPU using only my graphics library: <a href="libraries.html">Nobsin Engine</a></p>
+            </div>
+            <div class="grid">
+                <iframe class="if-large-objs" src="https://turbonobsin.github.io/old_projects/3DNE_OBJLoader/" frameborder="0"></iframe>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <button class="invert" onclick="window.scrollTo({top:0,left:0,behavior:'smooth'})">Back to Top</button>
+    </footer>
+    <script src="out/experiments.js"></script>
+</body>
+</html>

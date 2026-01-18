@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libraries</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="large_projects.css">
+    <link rel="stylesheet" href="libraries.css">
+</head>
+<body>
+    <header></header>
+    <script src="out/app.js"></script>
+    <script>
+        createHeader(1,2);
+    </script>
+    <section class="dark">
+        <div class="cont flx-v">
+            <div style="text-align:center;">
+                <h1>Nobsin Engine</h1>
+                <p>A 2D graphics library built from scratch.</p>
+                <p>Leverages the power of having control over every pixel on the canvas.</p>
+            </div>
+        </div>
+    </section>
+    <section class="light">
+        <div class="cont">
+            <div>
+                <h1>Control Over All Pixels</h1>
+                <p class="short">Draw an image but replace any colored pixel with any other color, at runtime, with virtually no performance impact.</p>
+            </div>
+            <div class="grid">
+                <div class="flx-sb d-color-test">
+                    <canvas id="can_control"></canvas>
+                    <div style="width:400px">
+                        <span style="margin-right:1rem">Select Color (Shirt):</span>
+                        <input id="i-color" type="color">
+                        <br>
+                        <br>
+                        <span style="margin-right:1rem">Select Color (Sleeves):</span>
+                        <input id="i-color2" type="color">
+                        <br>
+                        <br>
+                        <span style="margin-right:1rem">Select Color (Hair):</span>
+                        <input id="i-color3" type="color">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="light">
+        <div class="cont" style="">
+            <div>
+                <h1>Depth Buffer</h1>
+                <p class="short">Draw objects in front or behind others.</p>
+                <p class="short">Works like a z-axis but without the performance impact of sorting objects to be drawn.</p>
+            </div>
+            <div class="grid">
+                <canvas id="can_depth"></canvas>
+            </div>
+        </div>
+    </section>
+    <section class="dark">
+        <div class="cont two-grid">
+            <div style="width:75%">
+                <h1>Shader Effects</h1>
+                <p class="short">Day/Night cycle with Purkinje Effect (retains more blue light at night)</p>
+                <br>
+                <p class="short">This isn't just a blue overlay, but the shader effect goes through all the pixels on the screen and applies a formula to decrease the brightness of the pixels but keep more blue light.</p>
+            </div>
+            <div class="" style="border:solid 1px gray">
+                <div class="img-cont">
+                    <video style="width:100%" src="assets/shader_effect.mp4" autoplay loop muted controls></video>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="light none">
+        <div class="cont">
+            <div>
+                <h1>Getting Started</h1>
+                <p></p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <button class="invert" onclick="window.scrollTo({top:0,left:0,behavior:'smooth'})">Back to Top</button>
+    </footer>
+    <script src="out/NE_1.3.2.js"></script>
+    <script src="out/libraries.js"></script>
+</body>
+</html>
