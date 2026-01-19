@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Site</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <header></header>
+    <script src="out/app.js"></script>
+    <script>
+        createHeader(0);
+    </script>
+    <div class="overlay"></div>
+    
+    <div class="hero">
+        <div class="hero-left">
+            <div>
+                <h5 class="l-intro">Hi, I'm</h5>
+                <div class="d-name">
+                    <h1 class="l-name">Caleb</h1>
+                    <h1 class="l-name" style="margin-top:-70px;margin-left:100px">Early</h1>
+                </div>
+                <h5 class="l-title" style="text-align:right;margin-top:100px">Full Stack <br> Web Developer</h5>
+            </div>
+        </div>
+        <div class="hero-right" style="display:flex;flex-direction:column;gap:1rem;align-items:start;">
+            <ul>
+                <h2>About Me</h2>
+                <br>
+                <p>
+                    I'm a full-stack developer and Computer Science major at Bridgewater College with a passion for building tools that make learning easier and more intuitive. I co-created Code Otter, a web development learning platform now used in real classes, which taught me full-stack development, project design, and long-term maintenance.
+                </p>
+                <p>
+                    Outside of coursework, I've been active in the Computing Club, leading JavaScript Challenges, giving Lightning Talks, and participating in ICPC competitions. These experiences helped me grow more confident in presenting technical ideas and collaborating with others.
+                </p>
+                <p>
+                    When I'm not coding, I'm usually composing music or playing piano. I enjoy combining technical problem-solving with creative expression, and I try to bring that mindset into everything I build.
+                </p>
+                <!-- <p>Hello! My name is Caleb Early and I'm currently majoring in Computer Science and minoring in Math at Bridgewater College.</p>
+                <p>When I was young, around middle school age, my cousin used to teach me 3D modeling, but I was never very good at it. In response to this I dabbled in different hobbies trying to find something that I could be better than him at, until I stumbled across coding.</p>
+                <p>At the start I wasn't really that good, but I realized how fun it was and started to spend almost all my time trying to figure out how to make games.</p>
+                <p>It's been 8.5 years now since I first started, and I haven't regretted the journey even for a second.</p>
+                <p>Coding is my dream, passion, hobby, and life and if I'm ever at my computer there's a good chance that I'll be working on something.</p>
+                <p>My main fascination is combining math with programming to see what I can create, but I love to push the boundaries of what JavaScript in the web browser can do.</p> -->
+            </ul>
+        </div>
+    </div>
+
+    <section class="s-contact">
+        <div class="cont contact-cont">
+            <div class="left">
+                <h1 class="pixel">Contact Me</h1>
+                <br>
+                <p>Have a question or want to work with me?</p>
+                <p>Contact me at claebcode@gmail.com.</p>
+            </div>
+            <div class="right">
+                <div class="form">
+                    <div class="inp-cont">
+                        <div>Your Email</div>
+                        <input type="text" class="i-email">
+                    </div>
+                    <div class="inp-cont">
+                        <div>Your Name</div>
+                        <input type="text" class="i-name">
+                    </div>
+                    <div class="inp-cont">
+                        <div>Message</div>
+                        <textarea class="i-message" name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <button class="submit" onclick="mail()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <button class="invert" onclick="window.scrollTo({top:0,left:0,behavior:'smooth'})">Back to Top</button>
+    </footer>
+    <script src="out/NE_1.3.2.js"></script>
+    <script src="out/main.js"></script>
+</body>
+</html>

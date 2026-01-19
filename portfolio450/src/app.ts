@@ -2,25 +2,33 @@
 let header = document.querySelector("header");
 function createHeader(pageI:number,type?:string){
     header.innerHTML = `
-    <div class="title nav-item" onclick="location.pathname='portfolio/index.html'">
+    <div class="title nav-item" onclick="location.pathname='index.html'">
         <div>Caleb Early :: FILA-450 Portfolio</div>
     </div>
     <nav>
         <a href="index.html" class="nav-item ${pageI==0?"sel":""}">Home</a>
-        <a href="reflective_essay.html" class="nav-item ${pageI==1?"sel":""}">Reflective Essay</a>
-        <div class="nav-item nav-projects nav-dd ${pageI==2?"sel":""}" style="--h:250px">
-            <div>${(pageI == 2 && type != undefined) ? type : "Artifacts"}</div>
+        <div class="nav-item nav-projects nav-dd ${pageI==1?"sel":""}" style="--h:135px">
+            <div>Documents</div>
             <div class="nav-cover"></div>
             <div class="nav-list">
-                <a href="large_projects.html">Integration & Experiential Learning</a>
-                <a href="experiments.html">Diverse Perspectives</a>
-                <a href="libraries.html">Public Discourse</a>
-                <a href="libraries.html">Global Citizenship</a>
-                <a href="libraries.html">Ethical Reasoning</a>
+                <a href="reflective_essay.html">Reflective Essay</a>
+                <a href="resume.html">Resume</a>
+                <a href="cover_letter.html">Cover Letter</a>
+            </div>
+        </div>
+        <div class="nav-item nav-projects nav-dd ${pageI==2?"sel":""}" style="--h:250px">
+            <div>Artifacts</div>
+            <div class="nav-cover"></div>
+            <div class="nav-list">
+                <a href="1-integration.html">Integration & Learning</a>
+                <a href="2-diverse.html">Diverse Perspectives</a>
+                <a href="3-public.html">Public Discourse</a>
+                <a href="4-global.html">Global Citizenship</a>
+                <a href="5-ethical.html">Ethical Reasoning</a>
             </div>
         </div>
         <div class="nav-item nav-projects nav-dd ${pageI==3?"sel":""}" style="--h:135px">
-            <div>${(pageI == 3 && type != undefined) ? type : "Stand-Alone Artifacts"}</div>
+            <div>Stand-Alone Artifacts</div>
             <div class="nav-cover"></div>
             <div class="nav-list">
                 <a href="oral_communication.html">Oral Communication</a>
@@ -28,7 +36,6 @@ function createHeader(pageI:number,type?:string){
                 <a href="it_artifact.html">IT Artifact</a>
             </div>
         </div>
-        <a href="about.html" class="nav-item ${pageI==4?"sel":""}">About</a>
     </nav>
     `;
 

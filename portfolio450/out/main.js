@@ -1,6 +1,6 @@
 console.log("page loaded");
 let sections = [
-    document.querySelector(".hero"),
+    // document.querySelector(".hero"),
     document.querySelector(".s-main-projects"),
     document.querySelector(".s-contact")
 ];

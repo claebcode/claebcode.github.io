@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Site</title>
+    <title>FILA-450 Portfolio</title>
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="about.css">
 </head>
 <body>
     <header></header>
@@ -14,76 +15,32 @@
     </script>
     <div class="overlay"></div>
     
-    <div class="hero">
-        <div class="hero-left">
-            <div>
-                <h5 class="l-intro">Hi, I'm</h5>
-                <div class="d-name">
-                    <h1 class="l-name">Caleb</h1>
-                    <h1 class="l-name" style="margin-top:-70px;margin-left:100px">Early</h1>
-                </div>
-                <h5 class="l-title" style="text-align:right;margin-top:100px">Full Stack <br> Web Developer</h5>
-            </div>
-        </div>
-        <div class="hero-right">
-            <canvas class="hc3"></canvas>
-        </div>
-    </div>
-    
-    <canvas class="hero-canvas none"></canvas>
-    
-    <section class="dark-section s-skills none">
-        <div class="cont">
-            <h1>Skills</h1>
-            <div class="d-skills">
-                <div>
-                    <img src="assets/typescript_logo.png" alt="">
-                    <div>JavaScript</div>
-                </div>
-                <div>
-                    <img src="assets/javascript_logo.png" alt="">
-                    <div>JavaScript</div>
-                </div>
-                <div>
-                    <img class="gray" src="assets/html_logo.png" alt="">
-                    <div>JavaScript</div>
-                </div>
-                <div>
-                    <img src="assets/css_logo.png" alt="">
-                    <div>JavaScript</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="s-main-projects">
-        <canvas class="hero-canvas-2 none"></canvas>
-        <div class="cont">
-            <h1 class="pixel" style="text-align:center;">Main Projects</h1>
-            <div class="sections">
-                <div class="section-card">
-                    <video src="assets/large_projects.mp4" autoplay loop muted></video>
-                    <div class="card-text">
-                        <h2>Large Projects</h2>
-                        <p>This is a small collection of some large projects of mine that I've spent many months working on.</p>
-                        <a href="large_projects.html">Check it out</a>
+    <section class="first-section ignore flx-col s-main-projects" style="padding-bottom:0rem">
+        <div class="cont about-cont">
+            <div class="rot-card-cont">
+                <div class="rot-card">
+                    <div class="front">
+                        <h1>About Me</h1>
+                        <ul>
+                            <p>
+                                My name is Caleb Early, and I'm a full-stack developer and Computer Science major at Bridgewater College with a passion for building tools that make learning easier and more intuitive. I co-created Code Otter, a web development learning platform now used in real classes, which taught me full-stack development, project design, and long-term maintenance.
+                            </p>
+                            <p>
+                                Outside of coursework, I've been active in the Computing Club, leading JavaScript Challenges, giving Lightning Talks, and participating in ICPC competitions. These experiences helped me grow more confident in presenting technical ideas and collaborating with others.
+                            </p>
+                            <p>
+                                When I'm not coding, I'm usually composing music or playing piano. I enjoy combining technical problem-solving with creative expression, and I try to bring that mindset into everything I build.
+                            </p>
+                            <!-- <p>Hello! My name is Caleb Early and I'm currently majoring in Computer Science and minoring in Math at Bridgewater College.</p>
+                            <p>When I was young, around middle school age, my cousin used to teach me 3D modeling, but I was never very good at it. In response to this I dabbled in different hobbies trying to find something that I could be better than him at, until I stumbled across coding.</p>
+                            <p>At the start I wasn't really that good, but I realized how fun it was and started to spend almost all my time trying to figure out how to make games.</p>
+                            <p>It's been 8.5 years now since I first started, and I haven't regretted the journey even for a second.</p>
+                            <p>Coding is my dream, passion, hobby, and life and if I'm ever at my computer there's a good chance that I'll be working on something.</p>
+                            <p>My main fascination is combining math with programming to see what I can create, but I love to push the boundaries of what JavaScript in the web browser can do.</p> -->
+                        </ul>
                     </div>
-                </div>
-                <div class="section-card">
-                    <video src="assets/experiments.mp4" autoplay loop muted></video>
-                    <div class="card-text">
-                        <h2>Experiments</h2>
-                        <p>Ideas that came to me while working on other projects.</p>
-                        <a href="experiments.html">Check it out</a>
-                    </div>
-                </div>
-                <div class="section-card">
-                    <video src="assets/libraries.mp4" autoplay loop muted></video>
-                    <div class="card-text">
-                        <h2>Libraries</h2>
-                        <p>These are projects that other developers can use!</p>
-                        <a href="libraries.html">Check it out</a>
-                    </div>
+                    <div class="middle"></div>
+                    <div class="back"></div>
                 </div>
             </div>
         </div>
@@ -95,7 +52,7 @@
                 <h1 class="pixel">Contact Me</h1>
                 <br>
                 <p>Have a question or want to work with me?</p>
-                <p>Contact me at claebhero@gmail.com.</p>
+                <p>Contact me at claebcode@gmail.com.</p>
             </div>
             <div class="right">
                 <div class="form">
