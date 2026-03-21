@@ -1,12 +1,24 @@
 <!DOCTYPE html>
-<html lang="">
+<!-- <html lang="" class="themestyle-light"> -->
+<html lang="" class="" data-theme="default-light">
 	<head>
 		<meta charset="UTF-8">
-		<link rel="icon" href="/UMM/favicon.ico">
+		<!-- <link rel="icon" href="/favicon.ico"> -->
+		<link rel="icon" href="/UMM/logo_filled.svg">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>UMM 3.0</title>
-		<script type="module" crossorigin src="/UMM/assets/index-CGtj_O5b.js"></script>
-		<link rel="stylesheet" crossorigin href="/UMM/assets/index-BJ2lTTeh.css">
+		<title>UMM</title>
+		<script>
+			(()=>{
+				const theme = localStorage.getItem("editor-theme");
+				if(theme){
+					let [id,mode] = theme.split("-",2);
+					document.documentElement.setAttribute("data-theme",theme);
+					document.documentElement.setAttribute("data-theme-style",mode ? "dark" : "light");
+				}
+			})();
+		</script>
+		<script type="module" crossorigin src="/UMM/assets/index-DtIhyuqC.js"></script>
+		<link rel="stylesheet" crossorigin href="/UMM/assets/index-DuEGlxHo.css">
 	</head>
 	<body>
 		<div id="app"></div>
