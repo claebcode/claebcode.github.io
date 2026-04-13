@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="logo_filled.svg"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs5">
+    <linearGradient
+       id="swatch12"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#e5484d;stop-opacity:1;"
+         offset="0"
+         id="stop12" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#swatch12"
+       id="linearGradient12"
+       x1="2.5764923"
+       y1="255.96091"
+       x2="509.34532"
+       y2="255.96091"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview5"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="0.94334203"
+     inkscape:cx="110.24633"
+     inkscape:cy="232.68337"
+     inkscape:window-width="2256"
+     inkscape:window-height="1436"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg5"
+     showgrid="false" />
+  <!-- Soft floating shadow -->
+  <ellipse
+     style="fill:url(#linearGradient12);stroke-width:4.90033"
+     id="path6"
+     cx="255.96091"
+     cy="255.96091"
+     rx="253.38441"
+     ry="253.38412"
+     inkscape:label="bg" />
+  <!-- Hull (slightly trapezoidal for subtle perspective skew) -->
+  <!-- Left outer fold -->
+  <!-- Right outer fold -->
+  <!-- Center sail (slightly taller for balance) -->
+  <!-- Inner crease -->
+  <g
+     id="g6"
+     inkscape:label="boat"
+     transform="matrix(1.4079922,0,0,1.4079922,-104.44601,-106.23338)">
+    <ellipse
+       fill="#000000"
+       opacity="0.12"
+       id="ellipse1"
+       ry="84.761642"
+       rx="116.93122"
+       cy="300"
+       cx="256"
+       style="stroke-width:0.882916" />
+    <path
+       d="m 180,280 -4,60 h 160 l 16,-60"
+       fill="#ffffff"
+       stroke="#d8cfc4"
+       stroke-width="8"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="path1"
+       sodipodi:nodetypes="cccc" />
+    <path
+       d="m 100,220 h 76 l 80,60 -80,60 z"
+       fill="#ffffff"
+       stroke="#d8cfc4"
+       stroke-width="8"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="path2"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       d="m 412,220 h -76 l -80,60 80,60 z"
+       fill="#ffffff"
+       stroke="#d8cfc4"
+       stroke-width="8"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="path3"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       d="m 176,220 80,-80 80,80 -80,60 z"
+       fill="#ffffff"
+       stroke="#d8cfc4"
+       stroke-width="8"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="path4" />
+    <path
+       d="M 256,140 V 274"
+       stroke="#e5dbd0"
+       stroke-width="6"
+       stroke-linecap="round"
+       id="path5"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>
